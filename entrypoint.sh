@@ -14,7 +14,7 @@ cd ./bin
 ls
 file *
 
-./bin/deepsource.exe report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
+./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
 
 echo "Reporting test code coverage has finished"
 
