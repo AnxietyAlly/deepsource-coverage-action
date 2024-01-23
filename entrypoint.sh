@@ -5,6 +5,7 @@ apk add --update npm
 apk add --update curl
 apk add --update gcompat
 apk add --update libstdc++
+apk add --update git
 
 npm run coverage
 
