@@ -1,21 +1,37 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
-
-echo "Building frontend has begun"
-ls
+echo "Reporting test code coverage has begun"
 apk add --update npm
-# npm ci
-npm install
-npm run build --if-present
-echo "Building frontend has finished"
+apk add --update curl
 
-echo "time=$time" >> $GITHUB_OUTPUT
+npm run coverage
+curl https://deepsource.io/cli | sh
+./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
 
-#   steps:
-#     - run: echo "Building frontend has begun"
-#     - uses: actions/checkout@v4
-#     - run: npm ci
-#     - run: npm run build --if-present
-#     - run: echo "Building frontend has finished"
+echo "Reporting test code coverage has finished"
+
+
+# steps:
+#     - name: Checkout Code
+#       uses: actions/checkout@v4
+
+#     - name: Setup Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: '20'
+
+#     - name: Install Dependencies
+#       run: npm ci
+
+#     # Run your tests and generate coverage file here
+#     - name: Run Tests and Generate Coverage
+#       run: npm run coverage
+
+#     # Report test-coverage to DeepSource using CLI
+#     - name: Report test-coverage to DeepSource
+#       run: |
+#         # Install the CLI
+#         curl https://deepsource.io/cli | sh
+
+#         # Send the report to DeepSource
+#         ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
