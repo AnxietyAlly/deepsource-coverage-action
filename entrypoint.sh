@@ -8,12 +8,12 @@ npm run coverage
 
 curl https://deepsource.io/cli | sh
 ls ./bin
+file ./bin
+
 ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
 
 echo "Reporting test code coverage has finished"
 
-ls ./.bin
-ls ./.bin/deepsource
 
 # steps:
 #     - name: Checkout Code
