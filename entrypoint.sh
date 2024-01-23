@@ -3,12 +3,14 @@
 echo "Reporting test code coverage has begun"
 apk add --update npm
 apk add --update curl
+apk add --update file
 
 npm run coverage
 
 curl https://deepsource.io/cli | sh
 ls ./bin
 cd ./bin
+ls
 file *
 
 ./bin/deepsource.exe report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
