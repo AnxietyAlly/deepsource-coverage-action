@@ -3,7 +3,7 @@
 echo "Reporting test code coverage has begun"
 apk add --update npm
 apk add --update curl
-apk add --update gcompat
+# apk add --update gcompat
 
 npm run coverage
 
