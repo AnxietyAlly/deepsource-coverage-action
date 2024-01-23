@@ -5,6 +5,8 @@ apk add --update npm
 apk add --update curl
 
 npm run coverage
+
+|
 curl https://deepsource.io/cli | sh
 ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./coverage/cobertura-coverage.xml
 
