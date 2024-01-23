@@ -7,6 +7,10 @@ apk add --update gcompat
 apk add --update libstdc++
 apk add --update git
 
+git init
+git remote add origin https://github.com/AnxietyAlly/frontend.git
+git remote -v
+
 npm run coverage
 
 curl https://deepsource.io/cli | sh
