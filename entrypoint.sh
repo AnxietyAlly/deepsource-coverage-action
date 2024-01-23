@@ -4,6 +4,7 @@ echo "Reporting test code coverage has begun"
 apk add --update npm
 apk add --update curl
 apk add --update file
+apk add --update libc6-compat
 
 npm run coverage
 
