@@ -8,8 +8,7 @@ apk add --update libstdc++
 apk add --update git
 
 git init
-git remote add origin https://github.com/AnxietyAlly/frontend.git
-git remote -v
+git config --global --add safe.directory /github/workspace
 
 npm run coverage
 
