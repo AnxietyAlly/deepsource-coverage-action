@@ -12,7 +12,7 @@ ls ./bin
 
 echo "Reporting test code coverage has finished"
 
-ls ./bin/deepsource
+ls /bin/deepsource
 
 # steps:
 #     - name: Checkout Code
